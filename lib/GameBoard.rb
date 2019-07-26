@@ -1,5 +1,5 @@
 class GameBoard
-	@win = false
+	@win = false																																	# We define the different characteristics of the board 
 	@draw = false
 	@@playerturn = 0
 	@@rows = [@@row1 = {:a1 => ' ', :b1 => ' ', :c1 => ' '},
@@ -18,7 +18,7 @@ class GameBoard
 		@draw
 	end
 
-	def draw_board
+	def draw_board																																# We draw the board and define differents elements
 		puts "    A   B   C  "
 		puts "   --- --- --- "
 		puts "1 | #{@@row1[:a1]} | #{@@row1[:b1]} | #{@@row1[:c1]} |"
@@ -29,7 +29,7 @@ class GameBoard
 		puts "   --- --- --- "
 	end
 
-	def list_available_moves
+	def list_available_moves																											#We list the moves
 		available=[]
 		 @@rows.each do |row|
 		 	row.each do |key, value|
@@ -41,7 +41,7 @@ class GameBoard
 		 available
 	end
 
-	def chose(location)
+	def chose(location)																														#we define location
 		 @@rows.each do |rows|
 		 	rows.each do|key, value|
 		 		if key == location && value == ' '
@@ -52,7 +52,7 @@ class GameBoard
 		 end
 	end
 
-	def check_win
+	def check_win																																	# We define the diiferent way to win
 		win_x = ["X","X","X"]
 		win_o = ["O","O","O"]
 
